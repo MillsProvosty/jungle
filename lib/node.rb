@@ -6,5 +6,7 @@ class Node
     @next_node = nil
   end
 
+  
+
 
 end

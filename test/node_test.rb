@@ -1,4 +1,3 @@
-require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/node'
@@ -22,10 +21,3 @@ class NodeTest < Minitest::Test
     assert_nil @node.next_node
   end
 end
-
-# > require "./lib/node"
-# > node = Node.new("plop")
-# > node.data
-# => "plop"
-# > node.next_node
-# => nil
