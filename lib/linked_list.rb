@@ -58,6 +58,19 @@ class LinkedList
     @head.next_node = current_node
   end
 
+  def insert(index, data)
+    current_node = @head
+    (index - 1).times do
+      current_node = current_node.next_node
+      binding.pry
+    end
+    new_data = Node.new(data)
+    new_data.next_node = current_node.next_node
+    #inserts data in the middle!! 
+    current_node.next_node = new_data
+  end
+
+
 
 
 
