@@ -49,6 +49,23 @@ class TestLinkedList < Minitest::Test
     assert_equal "Nar. yeeeeeeeet pfffffft", @linked_list.to_string
   end
 
+  def test_prepend_adds_to_beginning_of_list
+    @linked_list.append("Plop")
+    assert_equal "Plop", @linked_list.to_string
+    @linked_list.append("suu")
+    assert_equal "Plop suu", @linked_list.to_string
+    @linked_list.prepend("dop")
+    assert_equal "dop Plop suu", @linked_list.to_string
+  end
+
+  def test_insert_puts_word_in_index
+      @linked_list.append("Plop")
+      @linked_list.append("suu")
+      @linked_list.prepend("dop")
+      @linked_list.insert(1, "woo")
+      assert_equal "dop woo Plop suu", @linked_list.to_string
+  end
+
 
 
 

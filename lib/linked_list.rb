@@ -9,27 +9,28 @@ class LinkedList
 
   def append(data)
     current_node = @head
+
     if current_node == nil
       @head = Node.new(data)
     else
       while current_node.next_node != nil
         current_node = current_node.next_node
       end
-        current_node.next_node = Node.new(data)
+      current_node.next_node = Node.new(data)
     end
-      data
+    data
   end
 
   def count
     num = 0
     current_node = @head
-    if current_node == nil
-      num
+    if current_node.next_node == nil
+      num += 1
     else
       num += 1
       while current_node.next_node != nil
-        num += 1
         current_node = current_node.next_node
+        num += 1
       end
     end
     num
@@ -38,7 +39,9 @@ class LinkedList
   def to_string
     string = ""
     current_node = @head
+
     if current_node == nil
+      ""
     else
       string << current_node.data
       while current_node.next_node != nil
@@ -48,6 +51,28 @@ class LinkedList
     end
     string
   end
+
+  def prepend(data)
+    current_node = @head
+    @head = Node.new(data)
+    @head.next_node = current_node
+  end
+
+  def insert(index, data)
+    current_node = @head
+    (index - 1).times do
+      current_node = current_node.next_node
+      binding.pry
+    end
+    new_data = Node.new(data)
+    new_data.next_node = current_node.next_node
+    #inserts data in the middle!! 
+    current_node.next_node = new_data
+  end
+
+
+
+
 
 
 end
