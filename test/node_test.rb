@@ -1,9 +1,4 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require './lib/node'
-require 'pry'
-
+require './test/test_helper'
 
 class NodeTest < Minitest::Test
   def setup
@@ -19,13 +14,7 @@ class NodeTest < Minitest::Test
   end
 
   def test_next_node_has_no_data
+    
     assert_nil @node.next_node
   end
 end
-
-# > require "./lib/node"
-# > node = Node.new("plop")
-# > node.data
-# => "plop"
-# > node.next_node
-# => nil
