@@ -39,6 +39,7 @@ class LinkedList
     string = ""
     current_node = @head
     if current_node == nil
+      nil
     else
       string << current_node.data
       while current_node.next_node != nil
@@ -49,5 +50,12 @@ class LinkedList
     string
   end
 
-
+  def prepend(data)
+    current_node = @head
+    #assigns the current node to what's already saved in head
+    @head = Node.new(data)
+    #creates an entirely NEW node with the data up front
+    @head.next_node = current_node
+    #tacks the old stuff onto the end of the NEW node.
+  end
 end
