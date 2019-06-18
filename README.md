@@ -1,3 +1,22 @@
+Iteration 4
+....
+> list.to_string
+=> "deep woo shi shu blop"
+> list.find(2, 1)
+=> "shi"
+> list.find(1, 3)
+=> "woo shi shu"
+> list.includes?("deep")
+=> true
+> list.includes?("dep")
+=> false
+> list.pop
+=> "blop"
+> list.pop
+=> "shu"
+> list.to_string
+=> "deep woo shi"
+
 Iteration 3
 > require "./lib/linked_list"
 > list = LinkedList.new
