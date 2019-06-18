@@ -7,6 +7,14 @@ class JungleBeat
   end
 
   def append(data)
-    @list.append(data)
+    new = data.split(' ')
+    new.each do |x|
+      @list.append(x)
+    end
+    @list.to_string
+  end
+
+  def count
+    @list.count
   end
 end

@@ -19,5 +19,18 @@ class TestJungleBeat < Minitest::Test
     assert_equal "deep doo ditt", @jungle_beat.append("deep doo ditt")
   end
 
+  def test_head_data
+    @jungle_beat.append("deep doo ditt")
+    assert_equal "deep", @jungle_beat.list.head.data
+    assert_equal "doo", @jungle_beat.list.head.next_node.data
+    assert_equal "deep doo ditt woo hoo shu", @jungle_beat.append("woo hoo shu")
+  end
+
+  def test_count_works
+    @jungle_beat.append("deep doo ditt")
+    @jungle_beat.append("woo hoo shu")
+    assert_equal 6, @jungle_beat.count
+  end
+
 
 end
