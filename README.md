@@ -1,3 +1,40 @@
+Iteration 5
+> require "./lib/jungle_beat"
+> jb = JungleBeat.new
+=> <JungleBeat list=<LinkedList head=nil #234567890890> #456789045678>
+> jb.list
+=> <LinkedList head=nil #234567890890>
+> jb.list.head
+=> nil
+> jb.append("deep doo ditt")
+=> "deep doo ditt"
+> jb.list.head.data
+=> "deep"
+> jb.list.head.next_node.data
+=> "doo"
+> jb.append("woo hoo shu")
+=> "woo hoo shu"
+> jb.count
+6
+
+Iteration 4
+> list.to_string
+=> "deep woo shi shu blop"
+> list.find(2, 1)
+=> "shi"
+> list.find(1, 3)
+=> "woo shi shu"
+> list.includes?("deep")
+=> true
+> list.includes?("dep")
+=> false
+> list.pop
+=> "blop"
+> list.pop
+=> "shu"
+> list.to_string
+=> "deep woo shi"
+
 Iteration 3
 > require "./lib/linked_list"
 > list = LinkedList.new
