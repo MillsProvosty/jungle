@@ -95,10 +95,9 @@ class LinkedList
 
   def pop
     current_node = @head
-    binding.pry
-    while current_node.next_node.next_node != nil
-      current_node
+    until current_node.next_node.next_node == nil
+      current_node = current_node.next_node
     end
+    current_node.next_node = nil
   end
-
 end
