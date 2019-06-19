@@ -66,13 +66,39 @@ class LinkedList
     end
     new_data = Node.new(data)
     new_data.next_node = current_node.next_node
-    #inserts data in the middle!! 
+    #inserts data in the middle!!
     current_node.next_node = new_data
   end
 
+  def find(index, num_of_nodes)
+    string = ""
+    current_node = @head
+    (index).times do
+      current_node = current_node.next_node
+    end
 
+    num_of_nodes.times do
+      string << current_node.data + " "
+      current_node = current_node.next_node
+    end
+    string.chop
+  end
 
+  def includes?(arg)
+    current_node = @head
+    if current_node.data == arg
+      true
+    elsif current_node.data != arg
+      current_node = current_node.next_node
+      return true if current_node.data == arg
+    end
+  end
 
-
-
+  def pop
+    current_node = @head
+    until current_node.next_node.next_node == nil
+      current_node = current_node.next_node
+    end
+    current_node.next_node = nil
+  end
 end

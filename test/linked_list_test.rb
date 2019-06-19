@@ -58,16 +58,41 @@ class TestLinkedList < Minitest::Test
     assert_equal "dop Plop suu", @linked_list.to_string
   end
 
-  def test_insert_puts_word_in_index
-      @linked_list.append("Plop")
-      @linked_list.append("suu")
-      @linked_list.prepend("dop")
-      @linked_list.insert(1, "woo")
-      assert_equal "dop woo Plop suu", @linked_list.to_string
+  def test_finds_index_and_num_of_nodes
+    @linked_list.append("deep")
+    @linked_list.append("woo")
+    @linked_list.append("shi")
+    @linked_list.append("shu")
+    @linked_list.append("blop")
+    assert_equal "deep woo shi shu blop", @linked_list.to_string
+    assert_equal "shi", @linked_list.find(2, 1)
+    assert_equal "woo shi shu", @linked_list.find(1, 3)
+  end
+
+  def test_includes_finds_data
+    @linked_list.append("deep")
+    @linked_list.append("woo")
+    @linked_list.append("shi")
+    @linked_list.append("shu")
+    @linked_list.append("blop")
+    assert_equal "deep woo shi shu blop", @linked_list.to_string
+    assert @linked_list.includes?("deep")
+    refute @linked_list.includes?("dep")
   end
 
 
+  def test_pop_removes_last_word
+    @linked_list.append("deep")
+    @linked_list.append("woo")
+    @linked_list.append("shi")
+    @linked_list.append("shu")
+    @linked_list.append("blop")
+    assert_equal "deep woo shi shu blop", @linked_list.to_string
 
+    @linked_list.pop
+    assert_equal "deep woo shi shu", @linked_list.to_string
 
-
+    @linked_list.pop
+    assert_equal "deep woo shi", @linked_list.to_string
+  end
 end

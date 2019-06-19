@@ -37,6 +37,4 @@ class TestJungleBeat < Minitest::Test
     @jungle_beat.append("woo hoo shu")
     assert @jungle_beat.play
   end
-
-
 end

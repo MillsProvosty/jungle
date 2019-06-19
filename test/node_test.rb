@@ -14,7 +14,6 @@ class NodeTest < Minitest::Test
   end
 
   def test_next_node_has_no_data
-    
     assert_nil @node.next_node
   end
 end
